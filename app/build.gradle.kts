@@ -64,4 +64,5 @@ dependencies {
 
 // Jetpack Compose navigation
     implementation(libs.androidx.navigation.compose)
+    implementation("androidx.compose.material:material-icons-core:1.7.8")
 }

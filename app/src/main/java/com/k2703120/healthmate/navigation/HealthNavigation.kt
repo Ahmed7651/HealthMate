@@ -12,6 +12,11 @@ import com.k2703120.healthmate.ui.records.HealthRecordsScreen
 import com.k2703120.healthmate.ui.records.RecordFormScreen
 import com.k2703120.healthmate.ui.theme.*
 import com.k2703120.healthmate.viewmodel.HealthViewModel
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.AddCircle
+import androidx.compose.material.icons.filled.List
+
 
 @Composable
 fun HealthNavigation(viewModel: HealthViewModel) {
@@ -37,6 +42,14 @@ fun HealthNavigation(viewModel: HealthViewModel) {
             ) {
 
                 NavigationBarItem(
+
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = HealthPrimary,
+                        selectedTextColor = HealthPrimary,
+                        indicatorColor = StepsBackground,
+                        unselectedIconColor = HealthSecondaryText,
+                        unselectedTextColor = HealthSecondaryText
+                    ),
                     selected = currentRoute == "dashboard",
                     onClick = {
                         navController.navigate("dashboard") {
@@ -45,12 +58,22 @@ fun HealthNavigation(viewModel: HealthViewModel) {
                         }
                     },
                     icon = {
-                        Text("⌂", color = HealthPrimary)
+                        Icon(Icons.Default.Home, contentDescription = "Home")
                     },
                     label = { Text("Home") }
+
+
                 )
 
                 NavigationBarItem(
+
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = HealthPrimary,
+                        selectedTextColor = HealthPrimary,
+                        indicatorColor = StepsBackground,
+                        unselectedIconColor = HealthSecondaryText,
+                        unselectedTextColor = HealthSecondaryText
+                    ),
                     selected = currentRoute == "add",
                     onClick = {
                         selectedRecord = null
@@ -61,12 +84,19 @@ fun HealthNavigation(viewModel: HealthViewModel) {
                         }
                     },
                     icon = {
-                        Text("+", color = HealthPrimary)
+                        Icon(Icons.Default.AddCircle, contentDescription = "Add Record")
                     },
                     label = { Text("Add Record") }
                 )
 
                 NavigationBarItem(
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = HealthPrimary,
+                        selectedTextColor = HealthPrimary,
+                        indicatorColor = StepsBackground,
+                        unselectedIconColor = HealthSecondaryText,
+                        unselectedTextColor = HealthSecondaryText
+                    ),
                     selected = currentRoute == "records" ||
                             currentRoute == "edit",
                     onClick = {
@@ -76,7 +106,7 @@ fun HealthNavigation(viewModel: HealthViewModel) {
                         }
                     },
                     icon = {
-                        Text("☰", color = HealthPrimary)
+                        Icon(Icons.Default.List, contentDescription = "History")
                     },
                     label = { Text("History") }
                 )

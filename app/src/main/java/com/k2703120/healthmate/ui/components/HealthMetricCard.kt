@@ -45,7 +45,7 @@ fun HealthMetricCard(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "$value $unit",
+                text = "${String.format("%,d", value)} $unit",
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
                 color = metricColor
@@ -65,7 +65,7 @@ fun HealthMetricCard(
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
-                text = "Daily goal: $goal $unit",
+                text = "Daily goal: ${String.format("%,d", goal)} $unit",
                 fontSize = 12.sp,
                 color = metricColor
             )
